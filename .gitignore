@@ -1,4 +1,4 @@
-.db
+*.db
 .idea
 .ipynb_checkpoints
 .mypy_cache

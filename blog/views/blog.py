@@ -10,15 +10,16 @@ cache = TTLCache(maxsize=100, ttl=300)
 
 
 def get_all(db: Session, user_id: int):
-    cache_key = f"user_{user_id}"
+    # cache_key = f"user_{user_id}"
 
-    cached_response = cache.get(cache_key)
-    if cached_response:
-        print("cached_response==>",cached_response)
-        return cached_response
+    # cached_response = cache.get(cache_key)
+    # if cached_response:
+    #     print("cached_response==>",cached_response)
+    #     return cached_response
 
     blogs = db.query(models.Blog).filter(models.Blog.user_id == user_id).all()
-    cache[cache_key] = blogs
+    # print(blogs)
+    # cache[cache_key] = blogs
     return blogs
 
 

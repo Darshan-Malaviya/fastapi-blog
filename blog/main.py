@@ -5,7 +5,7 @@ from .database import engine
 
 from .routers import blog, user,authentication
 
-app = FastAPI()
+app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False})
 
 models.Base.metadata.create_all(engine)
 
